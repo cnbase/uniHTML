@@ -221,7 +221,7 @@ export default {
       let data = {
         token:Token.getToken(),
       }
-      Api.post(Config.getApiUrl('/logout'),data).then(function (res){
+      Api.post('/logout',data).then(function (res){
         if (res.code === 0){
           self.$message.success(res.msg);
           setTimeout(function (){
@@ -261,7 +261,7 @@ export default {
         new_password:self.password.new,
         repeat_password:self.password.repeat
       }
-      Api.post(Config.getApiUrl('/change_password'),data).then(function (res){
+      Api.post('/change_password',data).then(function (res){
         if (res.code === 0){
           self.$message.success(res.msg);
           self.dialogVisible = false;
@@ -282,7 +282,7 @@ export default {
       let data = {
         token:Token.getToken(),
       }
-      Api.post(Config.getApiUrl('/index'),data).then(function (res){
+      Api.post('/index',data).then(function (res){
         if (res.code === 0){
           self.user = {...self.user,...res.data.user};
           self.menus = res.data.menus;

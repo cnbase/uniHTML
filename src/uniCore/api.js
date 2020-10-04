@@ -7,6 +7,8 @@ const _ajax = function (method,url,data,config) {
         return new Promise(function (resolve, reject){
             try {
                 if (typeof Config.apiData[`${url}`] === 'undefined'){
+                    console.log(Config.apiData);
+                    console.log(url);
                     resolve({code:5000,data:{},msg:'接口数据错误'});
                 } else {
                     resolve(Config.apiData[`${url}`]);
@@ -17,6 +19,7 @@ const _ajax = function (method,url,data,config) {
         });
     } else {
         //正式环境，发起请求
+        url = Config.getApiUrl(url);
         switch (method){
             case 'get':
                 return iAjax.get(url,data,config);

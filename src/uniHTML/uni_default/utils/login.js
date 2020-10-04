@@ -23,7 +23,7 @@ const login = function (data){
                 resolve({code:5002,data:{},msg:'密码错误'});
             }
         } else {
-            Api.post(Config.getApiUrl('/login'),data).then(function (res){
+            Api.post('/login',data).then(function (res){
                 if (res.code === 0){
                     //写入缓存
                     Token.writeToken(res.data.token);
@@ -50,7 +50,7 @@ const checkLogin = function (){
                 //开发模式 - 不去判断密码了
                 resolve({code:0,data:{},msg:'通过'});
             } else {
-                Api.post(Config.getApiUrl('/check_login'),{token:token}).then(function (res){
+                Api.post('/check_login',{token:token}).then(function (res){
                     resolve(res);
                 }).catch(function (error){
                     reject(error);
