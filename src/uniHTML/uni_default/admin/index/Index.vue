@@ -146,6 +146,7 @@ export default {
   },
   mounted() {
     this.checkLogin();
+    window.uniOpenTab = this.uniOpenTab;
   },
   methods: {
     //右键菜单-新窗口打开
@@ -192,8 +193,10 @@ export default {
     removeTab(url) {
       let self = this;
       self.tabs = self.tabs.filter(item => item.url !== url);
-      //切换数组最后一项为当前激活标签
-      self.currentTab = self.tabs.length>0?self.tabs[self.tabs.length-1]:[];
+      if (self.currentTab.url === url){
+        //切换数组最后一项为当前激活标签
+        self.currentTab = self.tabs.length>0?self.tabs[self.tabs.length-1]:[];
+      }
     },
     //切换标签
     changeTab(tab) {
@@ -214,6 +217,10 @@ export default {
       let tab = {...menu,closable:true};
       self.tabs.push(tab);
       self.currentTab = tab;
+    },
+    uniOpenTab(title,url,icon) {
+      let self = this;
+      self.openMenu({title:title,url:url,icon:icon});
     },
     //注销登录
     logout() {
@@ -274,6 +281,10 @@ export default {
     },
     //修改密码弹窗
     showPassword() {
+      let self = this;
+      self.password.old = '';
+      self.password.new = '';
+      self.password.repeat = '';
       this.dialogVisible = true;
     },
     //加载页面信息-获取登录用户信息，菜单

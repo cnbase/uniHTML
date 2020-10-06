@@ -1,133 +1,188 @@
 const apiData = {
-    "/change_password":{
+    "/change_password": {
         "code": 0,
         "data": {},
         "msg": "修改成功"
     },
-    "/check_login":{
+    "/check_login": {
         "code": 0,
         "data": {},
         "msg": "已登录"
     },
-    "/index":{
-        "code": 0,
-        "data": {
-            "user": {
-                "username": "Qbit",
-                "avatar": "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
+    "/index": {
+        "code":0,
+        "msg":"成功",
+        "data":{
+            "user":{
+                "username":"Qbit",
+                "avatar":"https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
             },
-            "menus": [
+            "menus":[
                 {
-                    "id": 8,
-                    "title": "主页",
-                    "url": "/home.html",
-                    "icon": "el-icon-monitor",
-                    "children": []
+                    "id":"1",
+                    "title":"后台主页",
+                    "url":"/home.html",
+                    "icon":"el-icon-trophy",
+                    "pid":"0",
+                    "children":[
+
+                    ]
                 },
                 {
-                    "id": 2,
-                    "title": "一级菜单",
-                    "url": "/home.html",
-                    "icon": "el-icon-umbrella",
-                    "children": [
+                    "id":"4",
+                    "title":"系统管理",
+                    "url":"#",
+                    "icon":"el-icon-setting",
+                    "pid":"0",
+                    "children":[
                         {
-                            "id": 3,
-                            "title": "二级菜单",
-                            "url": "/home.html",
-                            "icon": "el-icon-pie-chart",
-                            "children": [
-                                {
-                                    "id": 4,
-                                    "title": "三级菜单",
-                                    "url": "/home.html",
-                                    "icon": "el-icon-platform-eleme",
-                                    "children": []
-                                }
+                            "id":"2",
+                            "title":"菜单管理",
+                            "url":"/menu.html",
+                            "icon":"el-icon-trophy",
+                            "pid":"4",
+                            "children":[
+
+                            ]
+                        },
+                        {
+                            "id":"5",
+                            "title":"角色管理",
+                            "url":"/role.html",
+                            "icon":"el-icon-s-custom",
+                            "pid":"4",
+                            "children":[
+
+                            ]
+                        },
+                        {
+                            "id":"3",
+                            "title":"权限管理",
+                            "url":"/auth.html",
+                            "icon":"el-icon-user",
+                            "pid":"4",
+                            "children":[
+
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id":"6",
+                    "title":"用户管理",
+                    "url":"#",
+                    "icon":"el-icon-user",
+                    "pid":"0",
+                    "children":[
+                        {
+                            "id":"7",
+                            "title":"用户列表",
+                            "url":"/user.html",
+                            "icon":"el-icon-user",
+                            "pid":"6",
+                            "children":[
+
                             ]
                         }
                     ]
                 }
             ]
-        },
-        "msg": ""
+        }
     },
-    "/login":{
+    "/login": {
         "code": 0,
         "data": {
             "token": "RandomToken"
         },
         "msg": "登录成功"
     },
-    "/logout":{
+    "/logout": {
         "code": 0,
         "data": {},
         "msg": "已退出"
     },
     "/menu": {
-        "code": 0,
-        "data": {
-            menus: [
+        "code":0,
+        "msg":"成功",
+        "data":{
+            "total":2,
+            "page":1,
+            "size":10,
+            "menus":[
                 {
-                    id: 1,
-                    title: '2016-05-02',
-                    icon:'el-icon-trophy',
-                    status_text: '王小虎',
-                    url: '上海市普陀区金沙江路 1518 弄',
-                    sort_no: 0,
-                    status:0,
-                    pre_ids:[],
+                    "id":"1",
+                    "title":"后台主页",
+                    "url":"/home.html",
+                    "icon":"el-icon-trophy",
+                    "pid":"0",
+                    "pre_ids":[
+
+                    ],
+                    "module_id":"1",
+                    "sort_no":"0",
+                    "status":"1",
+                    "status_text":"正常"
                 },
                 {
-                    id: 2,
-                    title: '2016-05-04',
-                    icon:'el-icon-trophy',
-                    status_text: '王小虎',
-                    url: '上海市普陀区金沙江路 1517 弄',
-                    sort_no: 0,
-                    status:0,
-                    pre_ids:[],
-                },
-                {
-                    id: 3,
-                    title: '2016-05-01',
-                    icon:'el-icon-trophy',
-                    status_text: '王小虎',
-                    url: '上海市普陀区金沙江路 1519 弄',
-                    sort_no: 0,
-                    status:0,
-                    pre_ids:[],
-                    children: [{
-                        id: 31,
-                        title: '2016-05-01',
-                        icon:'el-icon-trophy',
-                        status_text: '王小虎',
-                        url: '上海市普陀区金沙江路 1519 弄',
-                        sort_no: 0,
-                        status:0,
-                        pre_ids:[],
-                    }, {
-                        id: 32,
-                        title: '2016-05-01',
-                        icon:'el-icon-trophy',
-                        status_text: '王小虎',
-                        url: '上海市普陀区金沙江路 1519 弄',
-                        sort_no: 0,
-                        status:0,
-                        pre_ids:[3,32],
-                    }]
-                },
-                {
-                    id: 4,
-                    title: '2016-05-03',
-                    icon:'el-icon-trophy',
-                    status_text: '王小虎',
-                    url: '上海市普陀区金沙江路 1516 弄',
-                    sort_no: 0,
-                    status:0,
-                    pre_ids:[],
-                }]
-        },
-        "msg": "成功"
+                    "id":"4",
+                    "title":"系统管理",
+                    "url":"#",
+                    "icon":"el-icon-setting",
+                    "pid":"0",
+                    "pre_ids":[
+
+                    ],
+                    "module_id":"1",
+                    "sort_no":"0",
+                    "status":"1",
+                    "status_text":"正常",
+                    "children":[
+                        {
+                            "id":"2",
+                            "title":"菜单管理",
+                            "url":"/menu.html",
+                            "icon":"el-icon-trophy",
+                            "pid":"4",
+                            "pre_ids":[
+                                "4"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常"
+                        },
+                        {
+                            "id":"3",
+                            "title":"权限管理",
+                            "url":"/auth.html",
+                            "icon":"el-icon-user",
+                            "pid":"4",
+                            "pre_ids":[
+                                "4"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"1",
+                            "status":"1",
+                            "status_text":"正常"
+                        },
+                        {
+                            "id":"5",
+                            "title":"角色管理",
+                            "url":"/role.html",
+                            "icon":"el-icon-s-custom",
+                            "pid":"4",
+                            "pre_ids":[
+                                "4"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "/edit_menu":{
         "code": 0,
@@ -135,6 +190,736 @@ const apiData = {
         "msg": "操作成功"
     },
     "/remove_menu":{
+        "code": 0,
+        "data": {},
+        "msg": "操作成功"
+    },
+    "/auth": {
+        "code":0,
+        "msg":"成功",
+        "data":{
+            "total":4,
+            "page":1,
+            "size":10,
+            "auths":[
+                {
+                    "id":"1",
+                    "title":"后台框架共用",
+                    "url":"",
+                    "pid":"0",
+                    "pre_ids":[
+
+                    ],
+                    "module_id":"1",
+                    "sort_no":"0",
+                    "status":"1",
+                    "status_text":"正常",
+                    "children":[
+                        {
+                            "id":"2",
+                            "title":"获取后台首页所需信息",
+                            "url":"/api/index",
+                            "pid":"1",
+                            "pre_ids":[
+                                "1"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常"
+                        },
+                        {
+                            "id":"3",
+                            "title":"修改密码",
+                            "url":"/api/change_password",
+                            "pid":"1",
+                            "pre_ids":[
+                                "1"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常"
+                        },
+                        {
+                            "id":"4",
+                            "title":"注销登录",
+                            "url":"/api/logout",
+                            "pid":"1",
+                            "pre_ids":[
+                                "1"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常"
+                        }
+                    ]
+                },
+                {
+                    "id":"5",
+                    "title":"菜单管理",
+                    "url":"/api/menu",
+                    "pid":"0",
+                    "pre_ids":[
+
+                    ],
+                    "module_id":"1",
+                    "sort_no":"0",
+                    "status":"1",
+                    "status_text":"正常",
+                    "children":[
+                        {
+                            "id":"6",
+                            "title":"新增/编辑菜单",
+                            "url":"/api/edit_menu",
+                            "pid":"5",
+                            "pre_ids":[
+                                "5"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常"
+                        },
+                        {
+                            "id":"7",
+                            "title":"删除菜单",
+                            "url":"/api/remove_menu",
+                            "pid":"5",
+                            "pre_ids":[
+                                "5"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常"
+                        }
+                    ]
+                },
+                {
+                    "id":"8",
+                    "title":"权限管理",
+                    "url":"/api/auth",
+                    "pid":"0",
+                    "pre_ids":[
+
+                    ],
+                    "module_id":"1",
+                    "sort_no":"0",
+                    "status":"1",
+                    "status_text":"正常",
+                    "children":[
+                        {
+                            "id":"9",
+                            "title":"新增/编辑权限",
+                            "url":"/api/edit_auth",
+                            "pid":"8",
+                            "pre_ids":[
+                                "8"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常"
+                        },
+                        {
+                            "id":"10",
+                            "title":"删除权限",
+                            "url":"/api/remove_auth",
+                            "pid":"8",
+                            "pre_ids":[
+                                "8"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常"
+                        }
+                    ]
+                },
+                {
+                    "id":"11",
+                    "title":"角色管理",
+                    "url":"/api/role",
+                    "pid":"0",
+                    "pre_ids":[
+
+                    ],
+                    "module_id":"1",
+                    "sort_no":"0",
+                    "status":"1",
+                    "status_text":"正常",
+                    "children":[
+                        {
+                            "id":"12",
+                            "title":"新增/编辑角色",
+                            "url":"/api/edit_role",
+                            "pid":"11",
+                            "pre_ids":[
+                                "11"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常"
+                        },
+                        {
+                            "id":"13",
+                            "title":"删除角色",
+                            "url":"/api/remove_role",
+                            "pid":"11",
+                            "pre_ids":[
+                                "11"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常"
+                        },
+                        {
+                            "id":"14",
+                            "title":"分配权限",
+                            "url":"/api/role_auth",
+                            "pid":"11",
+                            "pre_ids":[
+                                "11"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常",
+                            "children":[
+                                {
+                                    "id":"15",
+                                    "title":"保存分配的权限",
+                                    "url":"/api/role_auth_save",
+                                    "pid":"14",
+                                    "pre_ids":[
+                                        "11",
+                                        "14"
+                                    ],
+                                    "module_id":"1",
+                                    "sort_no":"0",
+                                    "status":"1",
+                                    "status_text":"正常"
+                                }
+                            ]
+                        },
+                        {
+                            "id":"16",
+                            "title":"分配菜单",
+                            "url":"/api/role_menu",
+                            "pid":"11",
+                            "pre_ids":[
+                                "11"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常",
+                            "children":[
+                                {
+                                    "id":"17",
+                                    "title":"保存分配的菜单",
+                                    "url":"/api/role_menu_save",
+                                    "pid":"16",
+                                    "pre_ids":[
+                                        "11",
+                                        "16"
+                                    ],
+                                    "module_id":"1",
+                                    "sort_no":"0",
+                                    "status":"1",
+                                    "status_text":"正常"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "/edit_auth":{
+        "code": 0,
+        "data": {},
+        "msg": "操作成功"
+    },
+    "/remove_auth":{
+        "code": 0,
+        "data": {},
+        "msg": "操作成功"
+    },
+    "/role": {
+        "code": 0,
+        "data": {
+            total:1000,
+            page:1,
+            size:10,
+            roles: [
+                {
+                    id: 1,
+                    name: '2016-05-02',
+                    status_text: '王小虎',
+                    status:'1',
+                },
+                {
+                    id: 2,
+                    name: '2016-05-04',
+                    status_text: '王小虎',
+                    status:'0',
+                }]
+        },
+        "msg": "成功"
+    },
+    "/edit_role":{
+        "code": 0,
+        "data": {},
+        "msg": "操作成功"
+    },
+    "/remove_role":{
+        "code": 0,
+        "data": {},
+        "msg": "操作成功"
+    },
+    "/role_auth":{
+        "code":0,
+        "msg":"成功",
+        "data":{
+            "role":{
+                "id":"1",
+                "name":"后台管理员"
+            },
+            "total":4,
+            "page":1,
+            "size":10,
+            "auths":[
+                {
+                    "id":"1",
+                    "title":"后台框架共用",
+                    "url":"",
+                    "pid":"0",
+                    "pre_ids":[
+
+                    ],
+                    "module_id":"1",
+                    "sort_no":"0",
+                    "status":"1",
+                    "status_text":"正常",
+                    "checked":true,
+                    "children":[
+                        {
+                            "id":"2",
+                            "title":"获取后台首页所需信息",
+                            "url":"/api/index",
+                            "pid":"1",
+                            "pre_ids":[
+                                "1"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常",
+                            "checked":true
+                        },
+                        {
+                            "id":"3",
+                            "title":"修改密码",
+                            "url":"/api/change_password",
+                            "pid":"1",
+                            "pre_ids":[
+                                "1"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常",
+                            "checked":true
+                        },
+                        {
+                            "id":"4",
+                            "title":"注销登录",
+                            "url":"/api/logout",
+                            "pid":"1",
+                            "pre_ids":[
+                                "1"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常",
+                            "checked":true
+                        }
+                    ]
+                },
+                {
+                    "id":"5",
+                    "title":"菜单管理",
+                    "url":"/api/menu",
+                    "pid":"0",
+                    "pre_ids":[
+
+                    ],
+                    "module_id":"1",
+                    "sort_no":"0",
+                    "status":"1",
+                    "status_text":"正常",
+                    "checked":true,
+                    "children":[
+                        {
+                            "id":"6",
+                            "title":"新增/编辑菜单",
+                            "url":"/api/edit_menu",
+                            "pid":"5",
+                            "pre_ids":[
+                                "5"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常",
+                            "checked":true
+                        },
+                        {
+                            "id":"7",
+                            "title":"删除菜单",
+                            "url":"/api/remove_menu",
+                            "pid":"5",
+                            "pre_ids":[
+                                "5"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常",
+                            "checked":true
+                        }
+                    ]
+                },
+                {
+                    "id":"8",
+                    "title":"权限管理",
+                    "url":"/api/auth",
+                    "pid":"0",
+                    "pre_ids":[
+
+                    ],
+                    "module_id":"1",
+                    "sort_no":"0",
+                    "status":"1",
+                    "status_text":"正常",
+                    "checked":true,
+                    "children":[
+                        {
+                            "id":"9",
+                            "title":"新增/编辑权限",
+                            "url":"/api/edit_auth",
+                            "pid":"8",
+                            "pre_ids":[
+                                "8"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常",
+                            "checked":true
+                        },
+                        {
+                            "id":"10",
+                            "title":"删除权限",
+                            "url":"/api/remove_auth",
+                            "pid":"8",
+                            "pre_ids":[
+                                "8"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常",
+                            "checked":true
+                        }
+                    ]
+                },
+                {
+                    "id":"11",
+                    "title":"角色管理",
+                    "url":"/api/role",
+                    "pid":"0",
+                    "pre_ids":[
+
+                    ],
+                    "module_id":"1",
+                    "sort_no":"0",
+                    "status":"1",
+                    "status_text":"正常",
+                    "checked":true,
+                    "children":[
+                        {
+                            "id":"12",
+                            "title":"新增/编辑角色",
+                            "url":"/api/edit_role",
+                            "pid":"11",
+                            "pre_ids":[
+                                "11"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常",
+                            "checked":true
+                        },
+                        {
+                            "id":"13",
+                            "title":"删除角色",
+                            "url":"/api/remove_role",
+                            "pid":"11",
+                            "pre_ids":[
+                                "11"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常",
+                            "checked":true
+                        },
+                        {
+                            "id":"14",
+                            "title":"分配权限",
+                            "url":"/api/role_auth",
+                            "pid":"11",
+                            "pre_ids":[
+                                "11"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常",
+                            "checked":true,
+                            "children":[
+                                {
+                                    "id":"15",
+                                    "title":"保存分配权限",
+                                    "url":"/api/role_auth_save",
+                                    "pid":"14",
+                                    "pre_ids":[
+                                        "11",
+                                        "14"
+                                    ],
+                                    "module_id":"1",
+                                    "sort_no":"0",
+                                    "status":"1",
+                                    "status_text":"正常",
+                                    "checked":true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "allSelectedIds":[
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15"
+            ],
+            "selectedAllStatus":true
+        }
+    },
+    "/role_auth_save":{
+        "code": 0,
+        "data": {},
+        "msg": "操作成功"
+    },
+    "/role_menu":{
+        "code":0,
+        "msg":"成功",
+        "data":{
+            "role":{
+                "id":"1",
+                "name":"后台管理员"
+            },
+            "total":2,
+            "page":1,
+            "size":10,
+            "menus":[
+                {
+                    "id":"1",
+                    "title":"后台主页",
+                    "url":"/home.html",
+                    "icon":"el-icon-trophy",
+                    "pid":"0",
+                    "pre_ids":[
+
+                    ],
+                    "module_id":"1",
+                    "sort_no":"0",
+                    "status":"1",
+                    "status_text":"正常",
+                    "checked":true
+                },
+                {
+                    "id":"4",
+                    "title":"系统管理",
+                    "url":"#",
+                    "icon":"el-icon-setting",
+                    "pid":"0",
+                    "pre_ids":[
+
+                    ],
+                    "module_id":"1",
+                    "sort_no":"0",
+                    "status":"1",
+                    "status_text":"正常",
+                    "checked":true,
+                    "children":[
+                        {
+                            "id":"2",
+                            "title":"菜单管理",
+                            "url":"/menu.html",
+                            "icon":"el-icon-trophy",
+                            "pid":"4",
+                            "pre_ids":[
+                                "4"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常",
+                            "checked":true
+                        },
+                        {
+                            "id":"3",
+                            "title":"权限管理",
+                            "url":"/auth.html",
+                            "icon":"el-icon-user",
+                            "pid":"4",
+                            "pre_ids":[
+                                "4"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"1",
+                            "status":"1",
+                            "status_text":"正常",
+                            "checked":true
+                        },
+                        {
+                            "id":"5",
+                            "title":"角色管理",
+                            "url":"/role.html",
+                            "icon":"el-icon-s-custom",
+                            "pid":"4",
+                            "pre_ids":[
+                                "4"
+                            ],
+                            "module_id":"1",
+                            "sort_no":"0",
+                            "status":"1",
+                            "status_text":"正常",
+                            "checked":true
+                        }
+                    ]
+                }
+            ],
+            "allSelectedIds":[
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "selectedAllStatus":true
+        }
+    },
+    "/role_menu_save":{
+        "code": 0,
+        "data": {},
+        "msg": "操作成功"
+    },
+    "/user":{
+        "code":0,
+        "msg":"成功",
+        "data":{
+            "total":2,
+            "page":1,
+            "size":10,
+            "users":[
+                {
+                    "id":"2",
+                    "username":"test",
+                    "nickname":"test",
+                    "avatar":"",
+                    "status":"1",
+                    "status_text":"正常",
+                    "roles":[
+                        {
+                            "id":"4",
+                            "user_id":"2",
+                            "role_id":"1",
+                            "name":"后台管理员"
+                        }
+                    ]
+                },
+                {
+                    "id":"1",
+                    "username":"admin",
+                    "nickname":"Qbit",
+                    "avatar":"https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
+                    "status":"1",
+                    "status_text":"正常",
+                    "roles":[
+                        {
+                            "id":"1",
+                            "user_id":"1",
+                            "role_id":"1",
+                            "name":"后台管理员"
+                        }
+                    ]
+                }
+            ],
+            "roles":[
+                {
+                    "id":"1",
+                    "name":"后台管理员"
+                },
+                {
+                    "id":"2",
+                    "name":"测试角色"
+                }
+            ]
+        }
+    },
+    "/user_edit":{
+        "code": 0,
+        "data": {},
+        "msg": "操作成功"
+    },
+    "/user_remove":{
+        "code": 0,
+        "data": {},
+        "msg": "操作成功"
+    },
+    "/user_add_role":{
+        "code": 0,
+        "data": {},
+        "msg": "操作成功"
+    },
+    "/user_remove_role":{
+        "code": 0,
+        "data": {},
+        "msg": "操作成功"
+    },
+    "/user_change_password":{
         "code": 0,
         "data": {},
         "msg": "操作成功"

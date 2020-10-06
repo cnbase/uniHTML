@@ -9,11 +9,9 @@
 
 **效果图**
 
-![后台预览]()
+请看 `previews/` 目录
 
-![前台预览]()
-
-* 支持第三方模板导入，只需简单配置
+* 支持第三方模板导入，只需简单配置，自带 `uni_default` 模板主题
 * 支持按模块module一键打包构建前后台系统
 * 支持指定页面构建
 * 支持按需和全量引入elementUI组件
@@ -26,7 +24,7 @@
 
 * 下载文件，git clone https://github.com/hiQbit/uniHTML.git
 * 执行 `npm install`
-* 配置 `src/config.js` 文件
+* 配置 `src/config.js` 文件,`devMode及apiData`
 * 本地测试 `npm run serve`
 * 构建模块页面 `npm run build`
 

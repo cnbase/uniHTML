@@ -2,16 +2,16 @@
  * 开发模式
  * @type {boolean}
  */
-const devMode = true;
+const devMode = false;
 
-/**
- * 开发模式下，直接读取该 api 文件数据
- */
-// const apiData = require('./uniHTML/uni_default/utils/api');
 /**
  * 正式环境
  */
-const apiData = {};
+let apiData = {};
+/**
+ * 开发模式下，直接读取该 api 文件数据
+ */
+// apiData = require('./uniHTML/uni_default/utils/api');
 
 /**
  * 模块访问url
@@ -23,7 +23,7 @@ const baseUrl = '';
  * 服务器API地址
  * @type {string}
  */
-const apiUrl = '';
+const apiUrl = '/api';
 
 /**
  * 第三方模板名称
@@ -35,13 +35,13 @@ const uniName = 'uni_default';
  * 应用模块名称
  * @type {string}
  */
-const moduleName = 'index';
+const moduleName = 'admin';
 
 /**
  * 构建目录，相对vue.config.js目录
  * @type {string}
  */
-const outputDir = './www/admin';
+const outputDir = '../www/admin';
 
 /**
  * 静态目录，相对于outputDir
@@ -70,7 +70,7 @@ const buildMode = true;
  * 单页面构建时，页面名称
  * @type {string}
  */
-const pageName = 'index';
+const pageName = 'menu';
 
 /**
  * 组装 api url

@@ -10,15 +10,19 @@
         border
         default-expand-all
         :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
-        :header-cell-style="{textAlign:'center'}"
-        :cell-style="{textAlign:'center'}"
         height="calc(100vh - 124px)"
         max-height="calc(100vh - 124px)"
     >
+      <el-table-column prop="exp" width="55">
+        <template slot="header">
+          <i class="el-icon-d-caret"></i>
+        </template>
+      </el-table-column>
       <el-table-column
           prop="title"
           label="菜单名称"
-          width="180">
+          width="280"
+      >
       </el-table-column>
       <el-table-column
           prop="id"
@@ -91,8 +95,7 @@
               v-model="edit.pre_ids"
               :options="menus"
               :clearable="true"
-              :props="{ expandTrigger: 'hover',value:'id',label:'title' }"
-              @change="changePid"
+              :props="{ expandTrigger: 'hover',value:'id',label:'title',checkStrictly:true }"
           >
           </el-cascader>
         </el-form-item>
@@ -100,8 +103,8 @@
           <el-input v-model="edit.sort_no" placeholder="请输入排序号"></el-input>
         </el-form-item>
         <el-form-item label="状态">
-          <el-radio v-model="edit.status" :label="1">正常</el-radio>
-          <el-radio v-model="edit.status" :label="0">停用</el-radio>
+          <el-radio v-model="edit.status" :label="'1'">正常</el-radio>
+          <el-radio v-model="edit.status" :label="'0'">停用</el-radio>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
@@ -124,7 +127,7 @@ export default {
     return {
       menus:[],
       pagination:{
-        total:1000,
+        total:0,
         size:10,
         page:1,
       },
@@ -134,10 +137,9 @@ export default {
         title:'',
         url:'',
         icon:'',
-        pid:0,
         pre_ids:[],
         sort_no:0,
-        status:0
+        status:'1'
       }
     }
   },
@@ -152,10 +154,6 @@ export default {
       let self = this;
       if (!self.edit.title){
         self.$message.error('请填写菜单名称');
-        return;
-      }
-      if (!self.edit.url){
-        self.$message.error('请填写菜单URL');
         return;
       }
       let data = {
@@ -175,19 +173,15 @@ export default {
         self.$message.error(error.message);
       })
     },
-    changePid(val) {
-      console.log(val)
-    },
     showAddMenu (){
       let self = this;
       self.edit.id = 0;
       self.edit.title = '';
       self.edit.url = '';
       self.edit.icon = '';
-      self.edit.pid = 0;
       self.edit.pre_ids = [];
       self.edit.sort_no = 0;
-      self.edit.status = 1;
+      self.edit.status = '1';
       self.dialogVisible = true;
     },
     showEditMenu (row) {
@@ -196,7 +190,6 @@ export default {
       self.edit.title = row.title;
       self.edit.url = row.url;
       self.edit.icon = row.icon;
-      self.edit.pid = row.pid;
       self.edit.pre_ids = row.pre_ids;
       self.edit.sort_no = row.sort_no;
       self.edit.status = row.status;
@@ -239,6 +232,9 @@ export default {
       Api.post('/menu',data).then(function (res){
         if (res.code === 0){
           self.menus = res.data.menus;
+          self.pagination.total = res.data.total;
+          self.pagination.page = res.data.page;
+          self.pagination.size = res.data.size;
         } else {
           self.$message.error(res.msg);
         }
