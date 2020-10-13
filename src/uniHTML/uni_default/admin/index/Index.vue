@@ -147,6 +147,7 @@ export default {
   mounted() {
     this.checkLogin();
     window.uniOpenTab = this.uniOpenTab;
+    window.uniCloseTab = this.uniCloseTab;
   },
   methods: {
     //右键菜单-新窗口打开
@@ -221,6 +222,10 @@ export default {
     uniOpenTab(title,url,icon) {
       let self = this;
       self.openMenu({title:title,url:url,icon:icon});
+    },
+    uniCloseTab(url) {
+      let self = this;
+      self.removeTab(url);
     },
     //注销登录
     logout() {
