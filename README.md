@@ -25,7 +25,7 @@
 
 **1. 安装说明**
 
-* 下载文件，git clone https://github.com/hiQbit/uniHTML.git
+* 下载文件，git clone https://github.com/ibzero/uniHTML.git
 * 执行 `npm install`
 * 配置 `src/config.js` 文件,`devMode及apiData`
 * 本地测试 `npm run serve`
